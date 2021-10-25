@@ -42,3 +42,13 @@ fn line_new(boundaries: Vec<ffi::Point>) -> ffi::Line {
     let rs = Box::new(Line{boundaries});
     ffi::Line { rs }
 }
+
+impl ffi::Line {
+    fn get_boundaries(&self) -> &Vec<ffi::Point> {
+        self.rs.get_boundaries()
+    }
+
+    fn len(&self) -> usize {
+        self.rs.len()
+    }
+}
